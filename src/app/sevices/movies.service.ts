@@ -9,7 +9,7 @@ export class MoviesService {
   api_key: string = '?api_key=' + environment.host_api_key;
   constructor(private httpclient: HttpClient) {}
 
-  getMovies() {
-    return this.httpclient.get(this.host + 'upcoming' + this.api_key);
+  getMovies(type: string = 'upcoming') {
+    return this.httpclient.get(this.host + type + this.api_key);
   }
 }
