@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { MovieDto } from '../models/movies';
+import { Movie, MovieDto, MovieVideosDto } from '../models/movies';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 @Injectable({
@@ -29,11 +29,23 @@ export class MoviesService {
         })
       );
   }
+  getMovie(id: string) {
+    return this.httpclient.get<Movie>(this.host + 'movie/' + id + '?' + this.api_key);
+  }
   getTvShows(type: string = 'latest', count: number = 12) {
     return this.httpclient.get<MovieDto>(`${this.host}tv/${type + '?' + this.api_key}`).pipe(
       switchMap((res) => {
         return of(res.results.slice(0, count));
       })
     );
+  }
+  getMovieVideos(id: string) {
+    return this.httpclient
+      .get<MovieVideosDto>(this.host + 'movie/' + id + '/videos?' + this.api_key)
+      .pipe(
+        switchMap((res) => {
+          return of(res.results.slice(0, 3));
+        })
+      );
   }
 }
