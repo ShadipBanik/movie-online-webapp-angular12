@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movies';
-import { IMAGE_SIZES } from '../image-size';
+import { IMAGE_SIZES } from '../../constants/image-size';
 @Component({
   selector: 'slider',
   templateUrl: './slider.component.html',

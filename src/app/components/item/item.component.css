@@ -5,6 +5,11 @@
   border-radius: 5px;
   background-color: #212121;
   border: 1px solid #999;
+  opacity: 0.5;
+}
+.movie-item:hover {
+  border: 1px solid #d4af37;
+  opacity: 1;
 }
 .movie-item-image > img {
   width: 100%;

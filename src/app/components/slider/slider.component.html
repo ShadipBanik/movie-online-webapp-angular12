@@ -5,7 +5,7 @@
         <img class="slide-bg-image" [src]="imageSizes.large + item.backdrop_path" alt="" />
       </div>
       <div class="slide-pane">
-        <h2 class="name">{{ item.title }} - {{ i }}</h2>
+        <h2 class="name">{{ item.title }}</h2>
         <div class="meta">
           <div class="info">
             <span class="rating">
@@ -19,6 +19,15 @@
         </div>
         <div class="desc mt-6">
           {{ item.overview }}
+        </div>
+        <div class="mt-2" *ngIf="!isBanner">
+          <button
+            pButton
+            type="button"
+            label="Overview"
+            class="p-button-warning p-button-outlined p-button-lg"
+            [routerLink]="'/movie/' + item.id"
+          ></button>
         </div>
       </div>
     </div>
