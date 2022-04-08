@@ -1,0 +1,16 @@
+<ng-container *ngIf="itemData">
+  <a
+    class="movie-item"
+    [routerLink]="itemData.title ? '/movie/' + itemData.id : '/tvshow/' + itemData.id"
+  >
+    <div class="movie-item-rating">
+      <i class="app-icon">star</i>
+      <span>{{ itemData.vote_average }}</span
+      >/10
+    </div>
+    <div class="movie-item-image">
+      <img [src]="imageSizes.medium + itemData.poster_path" [alt]="itemData.title" />
+    </div>
+    <div class="movie-item-title">{{ itemData.title ? itemData.title : itemData.name }}</div>
+  </a>
+</ng-container>

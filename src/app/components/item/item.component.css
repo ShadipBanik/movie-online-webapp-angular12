@@ -1,0 +1,50 @@
+.movie-item {
+  position: relative;
+  display: block;
+  min-height: 325px;
+  border-radius: 5px;
+  background-color: #212121;
+  border: 1px solid #999;
+  opacity: 0.5;
+}
+.movie-item:hover {
+  border: 1px solid #d4af37;
+  opacity: 1;
+}
+.movie-item-image > img {
+  width: 100%;
+  border-radius: 5px;
+  height: 375px;
+  object-fit: cover;
+}
+
+.movie-item-rating {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 10px;
+  left: 10px;
+  background-color: #212121;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.app-icon {
+  margin-right: 5px;
+  color: #d4af37;
+}
+.movie-item-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 0.5rem;
+  height: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .movie-item {
+    min-height: 170px;
+    opacity: 1;
+  }
+  .movie-item-image > img {
+    height: 170px;
+  }
+}

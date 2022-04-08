@@ -10,6 +10,21 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ItemBannerComponent } from './components/item-banner/item-banner.component';
+import { ItemComponent } from './components/item/item.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { MovieComponent } from './pages/movie/movie.component';
+import { TabViewModule } from 'primeng/tabview';
+import { ImageModule } from 'primeng/image';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { MenubarModule } from 'primeng/menubar';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { GenresComponent } from './pages/genres/genres.component';
+import { TvshowComponent } from './pages/tvshow/tvshow.component';
+import { TvshowsComponent } from './pages/tvshows/tvshows.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +32,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     HomeComponent,
     MoviesComponent,
-    SliderComponent
+    SliderComponent,
+    ItemBannerComponent,
+    ItemComponent,
+    MovieComponent,
+    VideoEmbedComponent,
+    GenresComponent,
+    TvshowComponent,
+    TvshowsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    PaginatorModule,
+    TabViewModule,
+    ImageModule,
+    InputTextModule,
+    ButtonModule,
+    CarouselModule,
+    MenubarModule,
+    SplitButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

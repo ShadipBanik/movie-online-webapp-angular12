@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <nav class="navbar-header">
     <a href="" class="navbar-logo">
       <img src="assets/images/logo.png" alt="" />
@@ -6,8 +6,97 @@
     <ul class="navabar-links">
       <li><a routerLink="/" routerLinkActive="">Home</a></li>
       <li><a routerLink="/movies">Movies</a></li>
-      <li><a routerLink="tvshows">Tv Shows</a></li>
-      <li><a routerLink="genres">Genres</a></li>
+      <li><a routerLink="/tvshows">Tv Shows</a></li>
+      <li><a routerLink="/genres">Genres</a></li>
     </ul>
   </nav>
-</header>
+</header> -->
+
+<div
+  class="surface-overlay py-3 px-3 border-bottom-1 surface-border shadow-2 flex align-items-center justify-content-between sticky relative lg:sticky md:sticky"
+>
+  <img src="assets/images/logo.png" alt="Image" height="50" class="mr-0 lg:mr-5" /><a
+    pripple=""
+    pstyleclass="@next"
+    enterclass="hidden"
+    leavetoclass="hidden"
+    (click)="showValue('', true)"
+    class="p-ripple p-element cursor-pointer block lg:hidden text-700"
+    ><i class="pi pi-bars text-4xl"></i
+    ><span class="p-ink" style="height: 34px; width: 34px; top: 7px; left: 9px"></span
+  ></a>
+  <div
+    [class]="
+      'align-items-center flex-grow-1 justify-content-end lg:flex absolute lg:static w-full  surface-overlay left-0 top-100 px-3 lg:px-0 z-4 shadow-2 lg:shadow-none ' +
+      hidden
+    "
+  >
+    <div
+      class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0 lg:ml-5"
+    ></div>
+    <ul
+      class="list-none p-0 m-0 mb-3 lg:mb-0 flex lg:align-items-center text-white select-none flex-column lg:flex-row cursor-pointer"
+    >
+      <li class="relative">
+        <a
+          pripple=""
+          routerLink="/"
+          (click)="showValue('hidden')"
+          class="p-ripple p-element flex px-3 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-home mr-2"></i>
+          <span>Home</span>
+          <span
+            class="p-ink"
+            style="height: 100px; width: 100px; top: -29.5px; left: -3.1875px"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          pripple=""
+          routerLink="/movies"
+          (click)="showValue('hidden')"
+          class="p-ripple p-element flex px-3 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-map mr-2"></i>
+          <span>Movies</span>
+          <span
+            class="p-ink"
+            style="height: 100px; width: 100px; top: -29.5px; left: -3.1875px"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          pripple=""
+          routerLink="/tvshows"
+          (click)="showValue('hidden')"
+          class="p-ripple p-element flex px-3 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-desktop mr-2"></i>
+          <span>Tv Shows</span>
+          <span
+            class="p-ink"
+            style="height: 100px; width: 100px; top: -29.5px; left: -3.1875px"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          pripple=""
+          routerLink="/genres"
+          (click)="showValue('hidden')"
+          class="p-ripple p-element flex px-3 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+        >
+          <i class="pi pi-filter-slash mr-2"></i>
+          <span>Genres</span>
+          <span
+            class="p-ink"
+            style="height: 100px; width: 100px; top: -29.5px; left: -3.1875px"
+          ></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
