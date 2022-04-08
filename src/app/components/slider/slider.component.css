@@ -40,7 +40,7 @@
 }
 .slide-pane {
   position: absolute;
-  width: 45%;
+  width: 55%;
   top: 5rem;
   left: 5rem;
 }
@@ -73,4 +73,26 @@
 .desc {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+@media only screen and (max-width: 600px) {
+  .desc {
+    display: none;
+  }
+  .slider {
+    height: 17rem;
+  }
+  .slide {
+    height: 17rem;
+  }
+  .name {
+    font-size: 2rem;
+  }
+  .meta {
+    font-size: 1rem;
+  }
+  .slide-pane {
+    width: 100%;
+    top: 2rem;
+    left: 2rem;
+  }
 }

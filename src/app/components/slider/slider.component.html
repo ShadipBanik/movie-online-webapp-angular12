@@ -1,11 +1,11 @@
 <div class="slider">
   <ng-container *ngFor="let item of items; let i = index">
-    <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
+    <div class="slide" *ngIf="i == currentSlideIndex && item.backdrop_path != null" @slideFade>
       <div class="slide-bg">
         <img class="slide-bg-image" [src]="imageSizes.large + item.backdrop_path" alt="" />
       </div>
       <div class="slide-pane">
-        <h2 class="name">{{ item.title }}</h2>
+        <h2 class="name">{{ item.title ? item.title : item.original_name }}</h2>
         <div class="meta">
           <div class="info">
             <span class="rating">
@@ -14,7 +14,12 @@
               ><span>/10</span>
             </span>
             <span>{{ item.vote_count }}</span>
-            <span>{{ item.release_date | date: 'yyyy' }}</span>
+            <span>{{
+              item.release_date
+                ? (item.release_date | date: 'yyyy')
+                : (item.first_air_date | date: 'yyyy')
+            }}</span>
+            <span>{{ item.title ? 'Movie' : 'Tv Show' }}</span>
           </div>
         </div>
         <div class="desc mt-6">
@@ -26,7 +31,7 @@
             type="button"
             label="Overview"
             class="p-button-warning p-button-outlined p-button-lg"
-            [routerLink]="'/movie/' + item.id"
+            [routerLink]="item.title ? '/movie/' + item.id : '/tvshow/' + item.id"
           ></button>
         </div>
       </div>

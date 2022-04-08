@@ -6,6 +6,7 @@ export interface Movie {
   id: number;
   original_language: string;
   original_title: string;
+  original_name: string;
   overview: string;
   popularity: number;
   poster_path: string;
@@ -14,6 +15,7 @@ export interface Movie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  first_air_date: string;
   revenue: number;
   runtime: number;
   status: string;
@@ -48,5 +50,5 @@ export interface MovieCredits {
   cast: {
     name: string;
     profile_path: string;
-  };
+  }[];
 }

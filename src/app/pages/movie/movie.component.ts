@@ -15,12 +15,15 @@ export class MovieComponent implements OnInit, OnDestroy {
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
   imageSizes = IMAGE_SIZES;
+  responsiveOptions: any[] = [];
   constructor(private route: ActivatedRoute, private movieService: MoviesService) {}
   ngOnInit(): void {
+    this.responsiceCarousel();
     this.route.params.pipe(first()).subscribe(({ id }) => {
       this.getMovie(id);
       this.getMovieVideos(id);
       this.getMovieImages(id);
+      this.getMovieCredits(id);
     });
   }
 
@@ -44,7 +47,27 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
   getMovieCredits(id: string) {
     this.movieService.getMovieCredits(id).subscribe((res) => {
-      this.movieCredits = res;
+      let data: any = res.cast.filter((x) => x.profile_path != null);
+      this.movieCredits = { cast: data };
     });
+  }
+  responsiceCarousel() {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 3
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 2
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ];
   }
 }

@@ -18,8 +18,13 @@ import { TabViewModule } from 'primeng/tabview';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { MenubarModule } from 'primeng/menubar';
+import { SplitButtonModule } from 'primeng/splitbutton';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { GenresComponent } from './pages/genres/genres.component';
+import { TvshowComponent } from './pages/tvshow/tvshow.component';
+import { TvshowsComponent } from './pages/tvshows/tvshows.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,9 @@ import { GenresComponent } from './pages/genres/genres.component';
     ItemComponent,
     MovieComponent,
     VideoEmbedComponent,
-    GenresComponent
+    GenresComponent,
+    TvshowComponent,
+    TvshowsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,10 @@ import { GenresComponent } from './pages/genres/genres.component';
     TabViewModule,
     ImageModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    CarouselModule,
+    MenubarModule,
+    SplitButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

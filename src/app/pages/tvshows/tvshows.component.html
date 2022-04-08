@@ -14,15 +14,14 @@
     </div>
   </div>
   <div class="grid">
-    <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of movies">
+    <div class="col-6 md:col-3 lg:col-3" *ngFor="let item of tvshows">
       <item [itemData]="item"></item>
     </div>
   </div>
   <div>
     <p-paginator
-      *ngIf="totalRecords"
       [rows]="20"
-      [totalRecords]="totalRecords"
+      [totalRecords]="10000"
       (onPageChange)="pagenate($event)"
       #p
     ></p-paginator>

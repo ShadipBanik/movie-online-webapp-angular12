@@ -16,30 +16,25 @@ export class MoviesService {
   getMovies(type: string = 'upcoming', count: number = 12) {
     return this.httpclient.get<MovieDto>(this.host + 'movie/' + type + '?' + this.api_key).pipe(
       switchMap((res) => {
-        return of(res.results.slice(0, count));
+        return of(res.results.filter((x) => x.backdrop_path != null).slice(0, count));
       })
     );
   }
 
-  searchMovies(page: number) {
+  searchMovies(page: number, type: string = 'popular', searchvalue?: string) {
+    let uri = searchvalue ? 'search/movie' : `movie/${type}`;
     return this.httpclient
-      .get<MovieDto>(this.host + `movie/popular?page=${page}&` + this.api_key)
+      .get<MovieDto>(this.host + `${uri}?page=${page}&query=${searchvalue}&` + this.api_key)
       .pipe(
         switchMap((res) => {
-          return of(res.results);
+          return of(res);
         })
       );
   }
   getMovie(id: string) {
     return this.httpclient.get<Movie>(this.host + 'movie/' + id + '?' + this.api_key);
   }
-  getTvShows(type: string = 'latest', count: number = 12) {
-    return this.httpclient.get<MovieDto>(`${this.host}tv/${type + '?' + this.api_key}`).pipe(
-      switchMap((res) => {
-        return of(res.results.slice(0, count));
-      })
-    );
-  }
+
   getMovieVideos(id: string) {
     return this.httpclient
       .get<MovieVideosDto>(this.host + 'movie/' + id + '/videos?' + this.api_key)
@@ -63,7 +58,7 @@ export class MoviesService {
       )
       .pipe(
         switchMap((res) => {
-          return of(res.results);
+          return of(res);
         })
       );
   }

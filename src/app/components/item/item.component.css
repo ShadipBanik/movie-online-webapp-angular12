@@ -39,3 +39,12 @@
   margin: 0.5rem;
   height: 30px;
 }
+@media only screen and (max-width: 600px) {
+  .movie-item {
+    min-height: 170px;
+    opacity: 1;
+  }
+  .movie-item-image > img {
+    height: 170px;
+  }
+}
