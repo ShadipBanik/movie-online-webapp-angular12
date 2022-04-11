@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Movie, MovieCredits, MovieDto, MovieImages, MovieVideosDto } from '../models/movies';
 import { switchMap } from 'rxjs/operators';
