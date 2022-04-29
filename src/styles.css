@@ -45,3 +45,9 @@ a {
   margin: 0.5rem;
   padding: 0.5rem;
 }
+.ng-trigger {
+  z-index: 0 !important;
+}
+.p-image-toolbar {
+  z-index: 1000;
+}
