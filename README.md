@@ -1,6 +1,6 @@
 # Angular12
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+This online movie app project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 
 ## Development server
 
